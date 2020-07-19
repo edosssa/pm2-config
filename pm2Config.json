@@ -1,0 +1,324 @@
+{
+	"$schema": "http://json-schema.org/schema#",
+	"$id": "http://edosakelvin.com/schemas/pm2-config-schema.json",
+	"description": "PM2 configuration schema. See https://pm2.io/docs/runtime/reference/ecosystem-file/",
+	"type": "object",
+	"properties": {
+		"apps": {
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/App"
+			}
+		},
+		"deploy": {
+			"examples": ["staging", "production"],
+			"patternProperties": {
+				"^.*$": {
+					"$ref": "#/definitions/Deploy"
+				}
+			}
+		}
+	},
+
+	"definitions": {
+		"App": {
+			"required": ["script"],
+			"properties": {
+				"append_env_to_name": {
+					"description": "Append the environment name to the app name",
+					"type": "boolean"
+				},
+				"args": {
+					"anyOf": [
+						{
+							"items": {
+								"type": "string"
+							},
+							"type": "array"
+						},
+						{
+							"type": "string"
+						}
+					],
+					"description": "Arguments to pass to the script"
+				},
+				"automation": {
+					"description": "Enable or disable apm wrapping",
+					"type": "boolean"
+				},
+				"autorestart": {
+					"description": "Enable or disable auto restart after process failure",
+					"type": "boolean"
+				},
+				"cron_restart": {
+					"description": "A cron pattern to restart your app",
+					"type": "string"
+				},
+				"cwd": {
+					"description": "Current working directory to start the process with",
+					"type": "string"
+				},
+				"disable_logs": {
+					"description": "Disable all logs storage",
+					"type": "boolean"
+				},
+				"disable_source_map_support": {
+					"description": "Enable or disable the source map support",
+					"type": "boolean"
+				},
+				"disable_trace": {
+					"description": "Enable or disable the transaction tracing",
+					"type": "boolean"
+				},
+				"env": {
+					"anyOf": [
+						{
+							"properties": {},
+							"type": "object"
+						},
+						{
+							"type": "string"
+						}
+					],
+					"description": "Specify environment variables to be injected"
+				},
+				"error": {
+					"description": "File path for stderr (each line is appended to this file)",
+					"type": "string"
+				},
+				"exec_mode": {
+					"description": "Set the execution mode, possible values: fork|cluster",
+					"type": "string"
+				},
+				"force": {
+					"description": "Start a script even if it is already running (only the script path is considered)",
+					"type": "boolean"
+				},
+				"gid": {
+					"description": "Set group id",
+					"type": "string"
+				},
+				"ignore_watch": {
+					"anyOf": [
+						{
+							"items": {
+								"type": "string"
+							},
+							"type": "array"
+						},
+						{
+							"type": "string"
+						}
+					],
+					"description": "List of paths to ignore (regex)"
+				},
+				"increment_var": {
+					"description": "Specify the name of an environnement variable to inject which increments for each cluster",
+					"type": "string"
+				},
+				"instance_var": {
+					"description": "Rename the NODE_APP_INSTANCE environment variable",
+					"type": "string"
+				},
+				"instances": {
+					"description": "Number of instances to be started in cluster mode",
+					"type": "number"
+				},
+				"interpreter": {
+					"description": "Interpreter absolute path",
+					"type": "string"
+				},
+				"kill_timeout": {
+					"description": "Time in ms before sending the final SIGKILL signal after SIGINT",
+					"type": "number"
+				},
+				"listen_timeout": {
+					"description": "Time in ms before forcing a reload if app is still not listening/has still not sent ready",
+					"type": "number"
+				},
+				"log": {
+					"description": "File path for combined stdout and stderr (each line is appended to this file)",
+					"type": ["string", "boolean"]
+				},
+				"log_date_format": {
+					"description": "Format for log timestamps in moment.js format (eg YYYY-MM-DD HH?:mm Z)",
+					"type": "string"
+				},
+				"log_types": {
+					"description": "Define a specific log output type, possible value?: json",
+					"type": "string"
+				},
+				"maxRestarts": {
+					"description": "Number of times a script is restarted when it exits in less than min_uptime",
+					"type": "number"
+				},
+				"max_memory_restart": {
+					"description": "Restart the app if an amount of memory is exceeded (format: /0-9?/ K for KB, ‘M’ for MB, ‘G’ for GB, default to B)",
+					"type": ["string", "number"]
+				},
+				"merge_logs": {
+					"description": "In cluster mode, merge each type of logs into a single file (instead of having one for each cluster)",
+					"type": "string"
+				},
+				"min_uptime": {
+					"description": "Minimum uptime of the app to be considered started (format is /[0-9]+(h|m|s)?/, for hours, minutes, seconds, default to ms)",
+					"type": ["string", "number"]
+				},
+				"name": {
+					"type": "string"
+				},
+				"node_args": {
+					"anyOf": [
+						{
+							"items": {
+								"type": "string"
+							},
+							"type": "array"
+						},
+						{
+							"type": "string"
+						}
+					],
+					"description": "Arguments to pass to the interpreter"
+				},
+				"output": {
+					"description": "File path for stdout (each line is appended to this file)",
+					"type": "string"
+				},
+				"pid_file": {
+					"description": "File path where the pid of the started process is written by pm2",
+					"type": "string"
+				},
+				"pmx": {
+					"description": "Enable or disable apm wrapping",
+					"type": "boolean"
+				},
+				"port": {
+					"description": "Shortcut to inject a PORT environment variable",
+					"type": "number"
+				},
+				"post_update": {
+					"description": "List of commands executed after a pull/upgrade operation performed from Keymetrics dashboard",
+					"items": {
+						"type": "string"
+					},
+					"type": "array"
+				},
+				"restartDelay": {
+					"description": "Time in ms to wait before restarting a crashing app",
+					"type": "number"
+				},
+				"script": {
+					"description": "Path of the script to launch, required field",
+					"type": "string"
+				},
+				"source_map_support": {
+					"description": "source_map_support \tEnable or disable the source map support",
+					"type": "boolean"
+				},
+				"trace": {
+					"description": "Enable or disable the transaction tracing",
+					"type": "boolean"
+				},
+				"treekill": {
+					"description": "Only kill the main process, not detached children",
+					"type": "boolean"
+				},
+				"uid": {
+					"description": "Set user id",
+					"type": "string"
+				},
+				"vizion": {
+					"description": "Enable or disable the versioning metadatas (vizion library)",
+					"type": "boolean"
+				},
+				"wait_ready": {
+					"description": "Make the process wait for a process.send(‘ready’)",
+					"type": "boolean"
+				},
+				"watch": {
+					"anyOf": [
+						{
+							"items": {
+								"type": "string"
+							},
+							"type": "array"
+						},
+						{
+							"type": "string"
+						}
+					],
+					"description": "Enable or disable the watch mode"
+				},
+				"watch_options": {
+					"description": "Object that will be used as an options with chokidar (refer to chokidar documentation)",
+					"properties": {},
+					"type": "object"
+				}
+			},
+			"type": "object"
+		},
+		"Deploy": {
+			"properties": {
+				"host": {
+					"description": "SSH host",
+					"items": {
+						"type": "string"
+					},
+					"type": "array"
+				},
+				"key": {
+					"description": "SSH key path",
+					"type": "string"
+				},
+				"path": {
+					"description": "path in the server",
+					"type": "string"
+				},
+				"post-deploy": {
+					"description": "post-deploy action",
+					"type": "string"
+				},
+				"post-setup": {
+					"description": "Post-setup commands or path to a script on the host machine",
+					"type": "string"
+				},
+				"pre-deploy-local": {
+					"description": "pre-deploy action",
+					"type": "string"
+				},
+				"pre-setup": {
+					"description": "Pre-setup command or path to a script on your local machine",
+					"type": "string"
+				},
+				"ref": {
+					"description": "GIT remote/branch",
+					"type": "string"
+				},
+				"repo": {
+					"description": "GIT remote",
+					"type": "string"
+				},
+				"shh_options": {
+					"anyOf": [
+						{
+							"items": {
+								"type": "string"
+							},
+							"type": "array"
+						},
+						{
+							"type": "string"
+						}
+					],
+					"description": "SSH options with no command-line flag, see ‘man ssh’"
+				},
+				"user": {
+					"description": "SSH user",
+					"type": "string"
+				}
+			},
+			"type": "object"
+		}
+	}
+}
