@@ -1,15 +1,15 @@
 {
-	"name": "pm2-config",
+  "name": "pm2-config",
   "version": "0.0.1",
   "description": "Typescript declarations and Json schema for pm2 ecosystem configuration file",
-	"author": {
-		"email": "edosakelvin@gmail.com",
-		"name": "Edosa Kelvin",
-		"url": "https://twitter.com/edoosssa"
+  "author": {
+    "email": "edosakelvin@gmail.com",
+    "name": "Edosa Kelvin",
+    "url": "https://twitter.com/edoosssa"
   },
   "peerDependencies": {
     "pm2": ">3.0.0"
   },
-	"license": "MIT",
-	"types": "index.d.ts"
+  "license": "MIT",
+  "types": "index.d.ts"
 }
