@@ -1,0 +1,10 @@
+{
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "/ecosystem.config.json"
+            ],
+            "url": "./pm2config.json"
+        }
+    ]
+}

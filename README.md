@@ -37,14 +37,14 @@ We've created json schema files to mirror the typescript declaration files so au
 To activate YAML and JSON autocomplete features, create a file `.vscode/settings.json` and paste in the following
 
 ```json
-"json.schemas": [
+{
+  "json.schemas": [
     {
-        "fileMatch": [
-            "/ecosystem.config.(json|yaml)"
-        ],
-        "url": "./node_modules/pm2-coonfig/pm2Config.json"
+      "fileMatch": ["/ecosystem.config.(json|yaml)"],
+      "url": "./node_modules/pm2-coonfig/pm2Config.json"
     }
-]
+  ]
+}
 ```
 
 > Tip: if you create pm2 configs often you should consider isnstalling the pm2-config vscode extension (coming soon), which registers all `ecosystem.config.json` files automatically.
