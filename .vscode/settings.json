@@ -1,8 +1,11 @@
 {
   "json.schemas": [
     {
-      "fileMatch": ["/ecosystem.config.(json|yaml)"],
+      "fileMatch": ["/ecosystem.config.json", "/ecosystem.config.json"],
       "url": "./pm2config.json"
     }
-  ]
+  ],
+  "yaml.schemas": {
+    "./pm2config.json": "/ecosystem.config.yaml"
+  }
 }

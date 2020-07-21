@@ -1,4 +1,7 @@
+
 # pm2-config
+
+[![made in nigeria](https://img.shields.io/badge/made%20in-nigeria-008751.svg?style=for-the-badge)](https://github.com/acekyd/made-in-nigeria)
 
 Typescript declarations and Json schema for pm2 ecosystem file
 
@@ -40,11 +43,22 @@ To activate YAML and JSON autocomplete features, create a file `.vscode/settings
 {
   "json.schemas": [
     {
-      "fileMatch": ["/ecosystem.config.(json|yaml)"],
-      "url": "./node_modules/pm2-coonfig/pm2Config.json"
+      "fileMatch": ["/ecosystem.config.json", "/ecosystem.config.json"],
+      "url": "https://raw.githubusercontent.com/edosssa/pm2-config/master/pm2config.json"
     }
-  ]
+  ],
+  "yaml.schemas": {
+    "https://raw.githubusercontent.com/edosssa/pm2-config/master/pm2config.json": "/ecosystem.config.yaml"
+  }
 }
 ```
 
-> Tip: if you create pm2 configs often you should consider isnstalling the pm2-config vscode extension (coming soon), which registers all `ecosystem.config.json` files automatically.
+And viola! ✨
+
+If you create pm2 configs often you should consider isnstalling the pm2-config vscode extension (coming soon), which registers all schemas automatically without you having to comfigure stuff.
+
+## License
+
+Copyright (c) Edosa Kelvin. All rights reserved.
+
+Licensed under the MIT license.
