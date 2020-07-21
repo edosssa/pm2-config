@@ -54,7 +54,7 @@ To activate YAML and JSON autocomplete features, create a file `.vscode/settings
 
 And viola! ✨
 
-If you create pm2 configs often you should consider isnstalling the pm2-config vscode extension (coming soon), which registers all schemas automatically without you having to comfigure stuff.
+If you create pm2 configs often you should consider isnstalling the pm2-config vscode extension (coming soon), which registers all schemas automatically without you having to configure stuff.
 
 ## License
 
