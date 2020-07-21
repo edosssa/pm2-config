@@ -1,4 +1,3 @@
-
 # pm2-config
 
 [![made in nigeria](https://img.shields.io/badge/made%20in-nigeria-008751.svg?style=for-the-badge)](https://github.com/acekyd/made-in-nigeria)
@@ -43,7 +42,7 @@ To activate YAML and JSON autocomplete features, create a file `.vscode/settings
 {
   "json.schemas": [
     {
-      "fileMatch": ["/ecosystem.config.json", "/ecosystem.config.json"],
+      "fileMatch": ["/ecosystem.config.json"],
       "url": "https://raw.githubusercontent.com/edosssa/pm2-config/master/pm2config.json"
     }
   ],
