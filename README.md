@@ -31,7 +31,7 @@ const config = {
 module.exports = config
 ```
 
-> The separation of the `config` declaration and the `epxort` statatement is **intentional** and required for autocomplete to work properly. Writing `module.exports = { ...config }` does not provide intellisene, perhaps this is a limitation of JSdoc or vscode itself.
+> The separation of the `config` declaration and the `epxort` statatement is **intentional** and required for autocomplete to work properly. Writing `module.exports = { ...your config }` does not trigger autocomplete, perhaps this is a limitation of JSdoc or vscode itself.
 
 ### JSON and YAML
 
