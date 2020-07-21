@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "$id": "http://edosakelvin.com/schemas/pm2-config-schema.json",
   "description": "PM2 configuration schema. See https://pm2.io/docs/runtime/reference/ecosystem-file/",
   "type": "object",
   "properties": {
