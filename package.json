@@ -1,6 +1,6 @@
 {
   "name": "pm2-config",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Typescript declarations and Json schema for pm2 ecosystem file",
   "author": {
     "email": "edosakelvin@gmail.com",
