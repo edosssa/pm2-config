@@ -29,7 +29,7 @@ And viola! ✨
 If you'd like a more global solution, checkout my vscode extension (coming soon) which adds json and yaml support automatically.
 
 
-## Javascript
+### Javascript
 
 `npm i pm2-config -D`
 
