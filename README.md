@@ -1,14 +1,12 @@
-# pm2-config
+# PM2 Config
 
-[![made in nigeria](https://img.shields.io/badge/made%20in-nigeria-008751.svg?style=for-the-badge)](https://github.com/acekyd/made-in-nigeria)
+## TL;DR
 
-Typescript declarations and Json schema for pm2 ecosystem file
+Accelerate your pm2 development experience with autocomplete and documentation for your JSON, YAML and Javascript pm2 configs, all from the comfort of your editor.
 
-## Quickstart
+## JSON
 
-### JSON and YAML
-
-To activate YAML and JSON autocomplete features, add the following lines of json to your vscode settings.
+To enable JSON support simply add the following lines to your `settings.json`
 
 ```json
 {
@@ -17,27 +15,31 @@ To activate YAML and JSON autocomplete features, add the following lines of json
       "fileMatch": ["/ecosystem.config.json"],
       "url": "https://raw.githubusercontent.com/edosssa/pm2-config/master/pm2config.json"
     }
-  ],
+  ]
+}
+```
+
+## YAML
+
+To enable YAML support, install the redhat YAML extension for vscode from [here](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
+or run `ext install redhat.vscode-yaml`
+
+Then add the following lines to your `settings.json` as follows:
+
+```
+{
   "yaml.schemas": {
     "https://raw.githubusercontent.com/edosssa/pm2-config/master/pm2config.json": "/ecosystem.config.yaml"
   }
 }
 ```
 
-And viola! ✨
+## Javascript
 
-If you'd like a more global solution, checkout my vscode extension (coming soon) which adds json and yaml support automatically.
-
-
-### Javascript
-
-`npm i pm2-config -D`
-
-Or if you prefer yarn:
-
+`npm i pm2-config -D`  
 `yarn add pm2-config --dev`
 
-Create a new file `ecosystem.config.js` or modify your existsing one to match the code below
+Then modify your `ecosystem.config.js` to match the code below:
 
 ```javascript
 /**

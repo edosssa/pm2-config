@@ -1,11 +1,14 @@
 {
   "name": "pm2-config",
   "version": "0.0.6",
-  "description": "Typescript declarations and Json schema for pm2 ecosystem file",
-  "author": {
-    "email": "edosakelvin@gmail.com",
-    "name": "Edosa Kelvin",
-    "url": "https://twitter.com/edoosssa"
-  },
+  "description": "Autocomplete and documentation for your JSON, YAML and Javascript pm2 configs",
+  "author": "Edosa Kelvin <edosakelvin@gmail.com>",
+  "keywords": [
+    "pm2",
+    "json",
+    "yaml",
+    "config"
+  ],
+  "repository": "https://github.com/edosssa/pm2-config",
   "license": "MIT"
 }

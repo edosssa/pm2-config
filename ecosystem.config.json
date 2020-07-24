@@ -1,8 +1,0 @@
-{
-  "apps": [{ "script": "script name here" }],
-  "deploy": {
-    "staging": {
-      "host": [""]
-    }
-  }
-}
