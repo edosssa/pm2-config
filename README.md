@@ -1,7 +1,5 @@
 # PM2 Config
 
-## TL;DR
-
 Accelerate your pm2 development experience with autocomplete and documentation for your JSON, YAML and Javascript pm2 configs, all from the comfort of your editor.
 
 ## JSON
