@@ -1,6 +1,8 @@
 # PM2 Config
 
-Accelerate your pm2 development experience with autocomplete and documentation for your JSON, YAML and Javascript pm2 configs, all from the comfort of your editor.
+> This package assumes you use VSCode as your editor
+
+Accelerate your pm2 development experience with autocomplete and documentation for your JSON, YAML and Javascript pm2 configs, all from the comfort of your VSCode Editor.
 
 ## JSON
 
@@ -22,7 +24,7 @@ To enable JSON support simply add the following lines to your `settings.json`
 To enable YAML support, install the redhat YAML extension for vscode from [here](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
 or run `ext install redhat.vscode-yaml`
 
-Then add the following lines to your `settings.json` as follows:
+Add the following lines to your `settings.json`:
 
 ```
 {
@@ -51,7 +53,7 @@ const config = {
 module.exports = config
 ```
 
-> The separation of the `config` declaration and the `epxort` statatement is **intentional** and required for autocomplete to work properly. Writing `module.exports = { ...your config }` does not trigger autocomplete, perhaps this is a limitation of JSdoc or vscode itself.
+> The separation of the `config` declaration and the `epxort` statatement is **intentional** and required for intellisense to work properly. Writing `module.exports = { ...your config }` does not trigger intellisense.
 
 ## License
 
